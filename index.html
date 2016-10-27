@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--MIT License
+
+Copyright (c) 2016 Matthias Müller-Prove http://mprove.net :: http://mprove.net/chronoscope
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.-->
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Chronoscope Hamburg @mprove</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+		<meta name="apple-mobile-web-app-title" content="Chronoscope">
+
+		<html manifest="chronoscope.manifest">
+
+		<link href="../../../../_style/ui.css" type="text/css" rel="stylesheet">
+		<style type="text/css" media="all"><!--
+.cover {
+	background-image: url(_media/chronoscope-cover.jpg);
+	background-position: 0 100%; }
+.chronobutton {
+	background-color: #e2e1d2;
+	text-align: center;
+	overflow: hidden;
+	padding-bottom: 11px;
+	border: solid 1px #dbdbdb;
+	display: inline-block;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	-moz-box-shadow: 3px 3px 3px rgba(194, 194, 194, 0.3);
+	-webkit-box-shadow: 3px 3px 3px rgba(194, 194, 194, 0.3);
+	box-shadow: 3px 3px 3px rgba(194, 194, 194, 0.3);
+}
+.chronobutton a {
+	border-bottom-style: none;
+	border-bottom-width: 0;
+	cursor: -webkit-zoom-in;
+	cursor:         zoom-in; 
+	}
+.chronobutton img{
+	-webkit-filter: sepia(42%);
+	filter: sepia(42%);
+}
+.chronobutton:hover {
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	  	 	 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.chronobutton:hover img {
+	-webkit-filter: sepia(0%);
+	filter: sepia(0%);
+	}
+.geometer {
+	position: fixed;
+	left: 0;
+	bottom: -10px;
+	z-index: 1;
+	}
+
+.webonly { }
+.legal {
+	margin-bottom: 155px; }
+
+
+
+.dsR2 /*agl rulekind: base;*/ {
+	width: 152px;
+	height: 152px; }
+.dsR4 /*agl rulekind: base;*/ {
+	width: 438px;
+	height: 220px; }
+
+/*––––– iPad –––––*/
+@media only screen and (max-device-width:1024px)
+{
+	.chronobutton {
+		-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		  	 	 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		}
+	.chronobutton img {
+		-webkit-filter: sepia(0%);
+		filter: sepia(0%);
+	}
+}
+
+
+/*@media only screen and (max-device-height:750px) */
+/*@media only screen and (max-height:559px)*/
+@media only screen and (height: 647px),	/* iPhone 6 WebApp */
+			screen and (height: 375px),	/* iPhone 6 landscape WebApp */
+			screen and (height: 716px),	/* iPhone 6plus WebApp */
+			screen and (height: 414px),	/* iPhone 6 landscape WebApp */
+			screen and (height: 748px),	/* iPad WebApp */
+			screen and (height:1004px)	/* iPad landscape WebApp */
+  {
+	body	{
+		margin-top: 0 !important;
+		padding-top: 0 !important; }
+	#menubar, #disqus_thread, footer, .breadcrumb, .webonly {
+    	display:none;
+  		}
+}
+
+--></style>
+		<link rel="icon" sizes="192x192" href="http://mprove.de/script/16/cdvnord/chronoscope/_media/android-touch-chronoscope-icon.png" />
+		<link rel="apple-touch-icon" href="http://mprove.de/script/16/cdvnord/chronoscope/_media/apple-touch-chronoscope-icon.png" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta property="og:site_name" content="mprove.de" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="http://mprove.de/script/16/cdvnord/_media/cdvnord-maps2.jpg" />
+			<meta name="keywords" content="Hamburg, Karte, map, Geschichte, history, cdvnord, Coding da Vinci, Coding da Vinci Nord">
+			<meta name="twitter:card" content="summary">
+			<meta name="twitter:site" content="mprove.de">
+		<meta name="twitter:creator" content="@mprove">
+		<meta name="twitter:title" content="Chronoscope Hamburg @mprove">
+		<meta name="twitter:description" content="Entdecke Hamburg vor 100, 200, 300 Jahren auf einer interaktiven Karte.">
+			<meta name="twitter:image" content="http://mprove.de/script/16/cdvnord/chronoscope/_media/android-chronoscope-icon.png">
+
+		
+			
+	</head>
+
+	<body>
+		<div class="cover"></div>
+		<div class="article">
+
+			<div class="header">
+				<h1>Chronoscope Hamburg</h1>
+				<p><a href="../../../../index.html">mprove design</a> cc 2016</p>
+			</div>
+			<p>Das Chronoscope ist eine Zeitmaschine, mit der Du 100, 200 oder 300 Jahre in die Geschichte Hamburgs zurück reisen kannst. Dazu werden historische Karten auf den aktuellen Stadtplan oder ein Satellitenbild Hamburgs geblendet. Mit dem Kontrollfeld des Chronoscopes kannst Du die Transparenz regeln und so die Gegend erkunden.</p>
+			<h2>1905<a id="c1905" name="c1905"></a></h2>
+			<div align="center">
+				<div class="chronobutton">
+					<a title="Chronoscope aktivieren…" href="map.html?y=1905" target="map"><img class="dsR1" src="_media/cdvnord-chrono1905.jpg" alt="" border="0"><br>
+							Chronoscope Hamburg 1905</a>
+				</div>
+			</div>
+			<ul>
+				<li>basiert auf einem <em><a href="http://resolver.sub.uni-hamburg.de/goobi/PPN741220725">Faltplan der Stadt Hamburg und Altona, ca. 1905</a></em></li>
+			</ul>
+			<p>Die Segmente der Karte wurden neu ausgerichtet. Da die Farben der Karte offensichtlich nicht sorgfältig gedruckt wurden – insb. das Rot für Gebäude ist um einige Meter (im Maßstab der Abbildung) verrutscht – wurde der Fehler in der Aufbereitung abgemildert.</p>
+			<h2>1867</h2>
+			<p>Hamburg ist entfestet und statt der Wallanlagen gibt es „Naherhohlung“. Nach dem großen Brand von 1842 ist der Bezirk östlich der Alster neu aufgebaut. Und zwischen den Bahnhöfen Altonas und Hamburgs verkehrt eine Verbindungsbahn.</p>
+			<h2>1803<a id="c1803" name="c1803"></a></h2>
+			<div align="center">
+				<div class="chronobutton">
+					<a title="Chronoscope aktivieren…" href="map.html?y=1803" target="map"><img class="dsR4" src="_media/cdvnord-chrono1803.jpg" alt="" border="0"><br>
+							Chronoscope Hamburg 1803</a>
+				</div>
+			</div>
+			<ul>
+				<li>basiert auf <em><a href="http://resolver.sub.uni-hamburg.de/goobi/PPN612024857">Altona, 1803</a></em> und <em><a href="http://resolver.sub.uni-hamburg.de/goobi/PPN611207990">Hamburg, 1803</a></em> von <a href="http://www.britishmuseum.org/research/search_the_collection_database/term_details.aspx?bioId=15174">Benjamin Baker</a> aus <a href="http://hitchhikers.wikia.com/wiki/Islington">Islington</a> in <a href="https://www.locatinglondon.org">London.</a></li>
+			</ul>
+			<p>Beide Karten zeigen jeweils einen Ausschnitt von 3 x 3 km und beziehen sich im Koordinatensystem bzgl. der Länge auf „de St. Pierre á Hamburg“, also auf die Petri-Kirche an der Mönckebergstraße.<br>Die Breite wird mit „59°51s“ angegeben –– nach heutigen Koordinaten liegt Hamburg bei 53°33' nördlicher Breite.<br>Obwohl beide Karten vom selben Kartographen stammen, sind sie doch gegeneinander um ca. 7° verdreht. Und selbst innerhalb Altonas gibt es zwischen der Stadt Altona und der Vorstadt St. Pauli eine Verkantung um etwa 10°. Für das Chronoscope wurden beide Abweichungen ausgeglichen.</p>
+			<h2>1694<a id="c1694" name="c1694"></a></h2>
+			<div align="center">
+				<div class="chronobutton">
+					<a title="Chronoscope aktivieren…" href="map.html?y=1694" target="map"><img class="dsR1" src="_media/cdvnord-chrono1694.jpg" alt="" border="0"><br>
+							Chronoscope Hamburg 1694</a>
+				</div>
+			</div>
+			<ul>
+				<li>basiert auf <a href="http://resolver.sub.uni-hamburg.de/goobi/PPN611982145"><em>Hamburg 1694</em></a> von <a href="https://en.wikipedia.org/wiki/Frederik_de_Wit">Frederik de Wit „Excudit Amstelodami“</a></li>
+			</ul>
+			<p>Diese Karte wurde relativ zur Karte von 1803 ausgerichtet, wobei insb. der Befestigungswall in Deckung gebracht wurde. „Millern Thor“, „Damm Thor“, „Stein Thor“ und „Deich Thor“ befinden sich an den richtigen Orten.</p>
+			<h2>Chronoscope<a id="x" name="x"></a></h2>
+			<p>In allen Versionen des Chronoscopes kann man zwischen den Jahrhunderten hin und herschalten.</p>
+			<div align="center">
+				<div class="chronobutton">
+					<a title="ChronoscopeX aktivieren" href="map.html" target="map"><img class="dsR2" src="_media/apple-touch-chronoscope-icon.png" alt="" border="0"><br>
+						Chronoscope</a>
+				</div>
+			</div>
+			<h2>Über das Chronoscope Hamburg</h2>
+			<ul>
+				<li>Design &amp; Implementation: <a href="../../../../index.html">Matthias Müller-Prove</a>, 2016</li>
+				<li><a href="../../codingdavinci/stabiHH_karten.html">Coding Da Vinci Nord Forschungstagebuch</a></li>
+			</ul>
+			<div class="legal">
+				<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>The <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/StillImage" rel="dct:type">maps</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://digitalisate.sub.uni-hamburg.de/bildmaterial.html" property="cc:attributionName" rel="cc:attributionURL">Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky</a> are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+				<p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Chronoscope Hamburg</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://mprove.net/chronoscope" property="cc:attributionName" rel="cc:attributionURL">Matthias Müller-Prove</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.<br />
+					Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://mmp.sub.uni-hamburg.de/davinci/" rel="dct:source">https://mmp.sub.uni-hamburg.de/davinci/</a>.</p>
+				<p><a href="https://github.com/mprove/chronoscope">Source code such as HTML, CSS and JavaScript</a>: MIT License (c) 2016 Matthias Müller-Prove</p>
+			</div>
+			<div class="webonly">
+				<h2 class="apropos">à propos</h2>
+				<ul>
+					<li><a href="https://www.locatinglondon.org">Locating London’s Past 1746</a></li>
+					<li><a href="http://blog.mprove.net/2016/06/googleearthengine/">The last 36 yrs on Earth</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>
